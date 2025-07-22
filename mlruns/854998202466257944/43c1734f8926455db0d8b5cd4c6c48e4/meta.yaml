@@ -1,0 +1,14 @@
+artifact_uri: file:///home/user/PROJECT/mlruns/854998202466257944/43c1734f8926455db0d8b5cd4c6c48e4/artifacts
+end_time: 1753052194709
+entry_point_name: ''
+experiment_id: '854998202466257944'
+lifecycle_stage: active
+run_id: 43c1734f8926455db0d8b5cd4c6c48e4
+run_name: stylish-slug-966
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753052194625
+status: 4
+tags: []
+user_id: user

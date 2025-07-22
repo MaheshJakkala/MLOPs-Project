@@ -1,0 +1,42 @@
+stages:
+
+  data_ingestion:
+    cmd: python -m src.data_ingestion
+    deps:
+      - config/paths_config.py
+      - src/data_ingestion.py
+    outs:
+      - artifacts/ingested_data
+  
+  data_processing:
+    cmd: python -m src.data_processing
+    deps:
+      - src/data_processing.py
+      - config/paths_config.py
+    outs:
+      - artifacts/processed_data
+  
+  feature_engineering:
+    cmd: python -m src.feature_engineering
+    deps:
+      - src/feature_engineering.py
+      - config/paths_config.py
+      - utils/helpers.py
+    outs:
+      - artifacts/engineered_data
+  
+  model_selection:
+    cmd: python -m src.model_selection
+    deps:
+      - src/model_selection.py
+      - config/paths_config.py
+      - utils/helpers.py
+  
+  model_training:
+    cmd: python -m src.model_training
+    deps:
+      - src/model_training.py
+      - config/paths_config.py
+      - utils/helpers.py
+    outs:
+      - artifacts/models

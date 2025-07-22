@@ -1,0 +1,13 @@
+numpy
+pandas
+setuptools
+mysql-connector-python
+scikit-learn
+lightgbm
+xgboost
+tensorboard
+matplotlib
+torch
+mlflow
+dvc
+flask

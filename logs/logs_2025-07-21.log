@@ -1,0 +1,201 @@
+2025-07-21 08:47:30,222 - INFO - Full pipeline Starting
+2025-07-21 08:47:30,222 - INFO - Data Ingestion started
+2025-07-21 08:47:30,222 - INFO - Directory for Ingestion Created ! 
+2025-07-21 08:47:30,765 - INFO - Raw data loaded successfully!
+2025-07-21 08:47:30,800 - INFO - Data splitted succefully! 
+2025-07-21 08:47:31,944 - INFO - Training and Testing data saved successfully
+2025-07-21 08:47:31,950 - INFO - Data Processing started
+2025-07-21 08:47:31,951 - INFO - Starting the pipeline of Data Proccessing
+2025-07-21 08:47:31,951 - INFO - Data loading started
+2025-07-21 08:47:32,245 - INFO - Data loading completed successfully: Shape :(83123, 25)
+2025-07-21 08:47:32,245 - INFO - Dropping unnecessary columns:['Unnamed: 0', 'id']
+2025-07-21 08:47:32,260 - INFO - Dropped Unnecessary columns successfully: Shape:(83123, 23)
+2025-07-21 08:47:32,262 - INFO - Handling outliers : Columns = ['Flight Distance', 'Departure Delay in Minutes', 'Arrival Delay in Minutes', 'Checkin service']
+2025-07-21 08:47:32,313 - INFO - Outliers Successfully Handled: Shape:(83123, 23)
+2025-07-21 08:47:32,313 - INFO - Handling Null Values
+2025-07-21 08:47:32,317 - INFO - Missing values Successfully filled: Shape:(83123, 23)
+2025-07-21 08:47:33,281 - INFO - Saved Processed Data Successfully
+2025-07-21 08:47:33,281 - INFO - Data processing pipeline Successfully Created: Shape(83123, 23)
+2025-07-21 08:47:33,286 - INFO - FE pipeline setup started
+2025-07-21 08:47:33,286 - INFO - Data loading started
+2025-07-21 08:47:33,529 - INFO - Data loaded Successfully
+2025-07-21 08:47:33,529 - INFO - Starting Feature Construction
+2025-07-21 08:47:33,532 - INFO - Feature Construction completed Successfully: features:['Total Delay', 'Delay Ratio']
+2025-07-21 08:47:33,532 - INFO - Starting Binning of Age Column
+2025-07-21 08:47:33,542 - INFO - Binning of Age Column Successfully Completed
+2025-07-21 08:47:33,542 - INFO - Performing label encoding on coloumns: ['Gender', 'Customer Type', 'Type of Travel', 'Class', 'satisfaction', 'Age Group']
+2025-07-21 08:47:33,665 - INFO - Mapping for Gender: {'Female': np.int64(0), 'Male': np.int64(1)}
+2025-07-21 08:47:33,665 - INFO - Mapping for Customer Type: {'Loyal Customer': np.int64(0), 'disloyal Customer': np.int64(1)}
+2025-07-21 08:47:33,665 - INFO - Mapping for Type of Travel: {'Business travel': np.int64(0), 'Personal Travel': np.int64(1)}
+2025-07-21 08:47:33,665 - INFO - Mapping for Class: {'Business': np.int64(0), 'Eco': np.int64(1), 'Eco Plus': np.int64(2)}
+2025-07-21 08:47:33,665 - INFO - Mapping for satisfaction: {'neutral or dissatisfied': np.int64(0), 'satisfied': np.int64(1)}
+2025-07-21 08:47:33,665 - INFO - Mapping for Age Group: {'Adult': np.int64(0), 'Child': np.int64(1), 'Senior': np.int64(2), 'Youngstar': np.int64(3), nan: np.int64(4)}
+2025-07-21 08:47:33,666 - INFO - Label Encoding Successfully completed
+2025-07-21 08:47:33,666 - INFO - FE started
+2025-07-21 08:47:33,716 - INFO - Y_train shape: (66498,) 
+2025-07-21 08:47:34,147 - INFO - Mutual information table: 
+                             Features  Mutual Information
+11                    Online boarding            0.211560
+6               Inflight wifi service            0.163365
+23                        Delay Ratio            0.152107
+4                               Class            0.134928
+3                      Type of Travel            0.114626
+13             Inflight entertainment            0.091207
+12                       Seat comfort            0.077452
+5                     Flight Distance            0.075128
+15                   Leg room service            0.060770
+14                   On-board service            0.056898
+8              Ease of Online booking            0.052302
+19                        Cleanliness            0.049877
+2                                 Age            0.046463
+16                   Baggage handling            0.042174
+18                   Inflight service            0.040770
+17                    Checkin service            0.032361
+10                     Food and drink            0.025753
+24                          Age Group            0.022203
+1                       Customer Type            0.017990
+9                       Gate location            0.012826
+21           Arrival Delay in Minutes            0.006628
+22                        Total Delay            0.005153
+20         Departure Delay in Minutes            0.002846
+7   Departure/Arrival time convenient            0.002004
+0                              Gender            0.000042
+2025-07-21 08:47:34,153 - INFO - Feature Selection completed Successfully
+2025-07-21 08:47:34,154 - INFO - Saving data
+2025-07-21 08:47:34,917 - INFO - Engineered Data Saved Successfully
+2025-07-21 08:47:34,917 - INFO - FE pipeline setup Successfully Completed
+2025-07-21 08:47:34,919 - INFO - Model Selection Pipeline Started
+2025-07-21 08:47:35,043 - INFO - loaded 10.0% data and sampled successfully
+2025-07-21 08:47:35,043 - INFO - Splitting Data
+2025-07-21 08:47:35,061 - INFO - Model training  and evaluation started
+2025-07-21 08:47:37,812 - INFO - Logistic Regression model trained Successfully	Metrics: Accuracy:0.8257443609022557, Precision :0.8291057567347898, Recall: 0.8257443609022557, F1_Score: 0.8263946760827705
+2025-07-21 08:53:07,885 - INFO - SVC model trained Successfully	Metrics: Accuracy:0.6631578947368421, Precision :0.6623539213283469, Recall: 0.6631578947368421, F1_Score: 0.6493370771008794
+2025-07-21 08:53:08,574 - INFO - Decistion Tree Classifier model trained Successfully	Metrics: Accuracy:0.9228872180451128, Precision :0.9229393637873551, Recall: 0.9228872180451128, F1_Score: 0.9229093711024707
+2025-07-21 08:53:11,575 - INFO - Random Forest Classifier model trained Successfully	Metrics: Accuracy:0.9425563909774436, Precision :0.9425867773872383, Recall: 0.9425563909774436, F1_Score: 0.942462217529295
+2025-07-21 08:53:14,437 - INFO - AdaBoost Classifier model trained Successfully	Metrics: Accuracy:0.8893834586466165, Precision :0.8892305304692101, Recall: 0.8893834586466165, F1_Score: 0.8892454406362735
+2025-07-21 08:53:21,597 - INFO - Gradient Boosting Classifier model trained Successfully	Metrics: Accuracy:0.9202406015037594, Precision :0.9201698769093614, Recall: 0.9202406015037594, F1_Score: 0.9201824248317525
+2025-07-21 08:53:23,089 - INFO - XGBoost model trained Successfully	Metrics: Accuracy:0.9449022556390978, Precision :0.9449395226140581, Recall: 0.9449022556390978, F1_Score: 0.9448124759041532
+2025-07-21 08:53:25,032 - INFO - LightGBM model trained Successfully	Metrics: Accuracy:0.9436992481203007, Precision :0.9437822997933131, Recall: 0.9436992481203007, F1_Score: 0.9435893753901616
+2025-07-21 08:53:26,224 - INFO - KNeighbors model trained Successfully	Metrics: Accuracy:0.8673684210526316, Precision :0.8678166750357017, Recall: 0.8673684210526316, F1_Score: 0.8665639015419659
+2025-07-21 08:53:26,473 - INFO - Naive Bayes model trained Successfully	Metrics: Accuracy:0.8526917293233083, Precision :0.8533249903099354, Recall: 0.8526917293233083, F1_Score: 0.8529041732415017
+2025-07-21 08:53:26,656 - INFO - Model Selection Pipeline completed Successfully
+2025-07-21 08:53:26,656 - INFO - Model training Started
+2025-07-21 08:53:26,778 - INFO - Loading data
+2025-07-21 08:53:26,877 - INFO - Data Successfully Loaded
+2025-07-21 08:53:26,877 - INFO - Splitting Data
+2025-07-21 08:53:26,891 - INFO - Data splitted Successfully
+2025-07-21 08:53:26,892 - INFO - Loaded Hyperparameters: {'learning_rate': [0.01, 0.05, 0.1], 'n_estimators': [100, 200, 300], 'max_depth': [5, 10, 15]}
+2025-07-21 08:53:26,895 - INFO - Model training Started
+2025-07-21 08:55:09,493 - INFO - Best model : LGBMClassifier(max_depth=10, n_estimators=200)	 Trained Successfully
+2025-07-21 08:55:09,494 - INFO - Best Hyperparameters: {'learning_rate': 0.1, 'max_depth': 10, 'n_estimators': 200}
+2025-07-21 08:55:09,837 - INFO - Evaluation metrics: {'accuracy': 0.9457443609022557, 'precision': 0.9458054245984763, 'recall': 0.9457443609022557, 'f1_score': 0.9456483617215282, 'confusion_matrix': [[9119, 356], [546, 6604]]}
+2025-07-21 08:55:09,883 - INFO - Saving model
+2025-07-21 08:55:09,910 - INFO - Model Successfully Saved!
+2025-07-21 08:55:14,458 - INFO - Full pipeline Successfully Completed
+2025-07-21 09:21:51,085 - INFO - Data Ingestion started
+2025-07-21 09:21:51,086 - INFO - Directory for Ingestion Created ! 
+2025-07-21 09:21:51,222 - INFO - Raw data loaded successfully!
+2025-07-21 09:21:51,236 - INFO - Data splitted succefully! 
+2025-07-21 09:21:51,616 - INFO - Training and Testing data saved successfully
+2025-07-21 09:21:52,124 - INFO - Data Processing started
+2025-07-21 09:21:52,124 - INFO - Starting the pipeline of Data Proccessing
+2025-07-21 09:21:52,124 - INFO - Data loading started
+2025-07-21 09:21:52,237 - INFO - Data loading completed successfully: Shape :(83123, 25)
+2025-07-21 09:21:52,237 - INFO - Dropping unnecessary columns:['Unnamed: 0', 'id']
+2025-07-21 09:21:52,244 - INFO - Dropped Unnecessary columns successfully: Shape:(83123, 23)
+2025-07-21 09:21:52,245 - INFO - Handling outliers : Columns = ['Flight Distance', 'Departure Delay in Minutes', 'Arrival Delay in Minutes', 'Checkin service']
+2025-07-21 09:21:52,262 - INFO - Outliers Successfully Handled: Shape:(83123, 23)
+2025-07-21 09:21:52,262 - INFO - Handling Null Values
+2025-07-21 09:21:52,264 - INFO - Missing values Successfully filled: Shape:(83123, 23)
+2025-07-21 09:21:52,611 - INFO - Saved Processed Data Successfully
+2025-07-21 09:21:52,611 - INFO - Data processing pipeline Successfully Created: Shape(83123, 23)
+2025-07-21 09:21:53,676 - INFO - FE pipeline setup started
+2025-07-21 09:21:53,676 - INFO - Data loading started
+2025-07-21 09:21:53,772 - INFO - Data loaded Successfully
+2025-07-21 09:21:53,772 - INFO - Starting Feature Construction
+2025-07-21 09:21:53,773 - INFO - Feature Construction completed Successfully: features:['Total Delay', 'Delay Ratio']
+2025-07-21 09:21:53,773 - INFO - Starting Binning of Age Column
+2025-07-21 09:21:53,776 - INFO - Binning of Age Column Successfully Completed
+2025-07-21 09:21:53,776 - INFO - Performing label encoding on coloumns: ['Gender', 'Customer Type', 'Type of Travel', 'Class', 'satisfaction', 'Age Group']
+2025-07-21 09:21:53,813 - INFO - Mapping for Gender: {'Female': np.int64(0), 'Male': np.int64(1)}
+2025-07-21 09:21:53,813 - INFO - Mapping for Customer Type: {'Loyal Customer': np.int64(0), 'disloyal Customer': np.int64(1)}
+2025-07-21 09:21:53,813 - INFO - Mapping for Type of Travel: {'Business travel': np.int64(0), 'Personal Travel': np.int64(1)}
+2025-07-21 09:21:53,813 - INFO - Mapping for Class: {'Business': np.int64(0), 'Eco': np.int64(1), 'Eco Plus': np.int64(2)}
+2025-07-21 09:21:53,813 - INFO - Mapping for satisfaction: {'neutral or dissatisfied': np.int64(0), 'satisfied': np.int64(1)}
+2025-07-21 09:21:53,813 - INFO - Mapping for Age Group: {'Adult': np.int64(0), 'Child': np.int64(1), 'Senior': np.int64(2), 'Youngstar': np.int64(3), nan: np.int64(4)}
+2025-07-21 09:21:53,813 - INFO - Label Encoding Successfully completed
+2025-07-21 09:21:53,813 - INFO - FE started
+2025-07-21 09:21:53,832 - INFO - Y_train shape: (66498,) 
+2025-07-21 09:21:53,968 - INFO - Mutual information table: 
+                             Features  Mutual Information
+11                    Online boarding            0.211560
+6               Inflight wifi service            0.163365
+23                        Delay Ratio            0.152107
+4                               Class            0.134928
+3                      Type of Travel            0.114626
+13             Inflight entertainment            0.091207
+12                       Seat comfort            0.077452
+5                     Flight Distance            0.075128
+15                   Leg room service            0.060770
+14                   On-board service            0.056898
+8              Ease of Online booking            0.052302
+19                        Cleanliness            0.049877
+2                                 Age            0.046463
+16                   Baggage handling            0.042174
+18                   Inflight service            0.040770
+17                    Checkin service            0.032361
+10                     Food and drink            0.025753
+24                          Age Group            0.022203
+1                       Customer Type            0.017990
+9                       Gate location            0.012826
+21           Arrival Delay in Minutes            0.006628
+22                        Total Delay            0.005153
+20         Departure Delay in Minutes            0.002846
+7   Departure/Arrival time convenient            0.002004
+0                              Gender            0.000042
+2025-07-21 09:21:53,972 - INFO - Feature Selection completed Successfully
+2025-07-21 09:21:53,972 - INFO - Saving data
+2025-07-21 09:21:54,182 - INFO - Engineered Data Saved Successfully
+2025-07-21 09:21:54,182 - INFO - FE pipeline setup Successfully Completed
+2025-07-21 09:23:55,445 - INFO - Model Selection Pipeline Started
+2025-07-21 09:23:55,497 - INFO - loaded 10.0% data and sampled successfully
+2025-07-21 09:23:55,497 - INFO - Splitting Data
+2025-07-21 09:23:55,503 - INFO - Model training  and evaluation started
+2025-07-21 09:23:57,135 - INFO - Logistic Regression model trained Successfully	Metrics: Accuracy:0.8257443609022557, Precision :0.8291057567347898, Recall: 0.8257443609022557, F1_Score: 0.8263946760827705
+2025-07-21 09:26:02,993 - INFO - SVC model trained Successfully	Metrics: Accuracy:0.6631578947368421, Precision :0.6623539213283469, Recall: 0.6631578947368421, F1_Score: 0.6493370771008794
+2025-07-21 09:26:03,271 - INFO - Decistion Tree Classifier model trained Successfully	Metrics: Accuracy:0.9228872180451128, Precision :0.9229359005901919, Recall: 0.9228872180451128, F1_Score: 0.9229080868886816
+2025-07-21 09:26:04,312 - INFO - Random Forest Classifier model trained Successfully	Metrics: Accuracy:0.9443609022556391, Precision :0.9444061512154388, Recall: 0.9443609022556391, F1_Score: 0.9442663584206964
+2025-07-21 09:26:05,381 - INFO - AdaBoost Classifier model trained Successfully	Metrics: Accuracy:0.8893834586466165, Precision :0.8892305304692101, Recall: 0.8893834586466165, F1_Score: 0.8892454406362735
+2025-07-21 09:26:07,717 - INFO - Gradient Boosting Classifier model trained Successfully	Metrics: Accuracy:0.9202406015037594, Precision :0.9201698769093614, Recall: 0.9202406015037594, F1_Score: 0.9201824248317525
+2025-07-21 09:26:08,053 - INFO - XGBoost model trained Successfully	Metrics: Accuracy:0.9449022556390978, Precision :0.9449395226140581, Recall: 0.9449022556390978, F1_Score: 0.9448124759041532
+2025-07-21 09:26:08,499 - INFO - LightGBM model trained Successfully	Metrics: Accuracy:0.9436992481203007, Precision :0.9437822997933131, Recall: 0.9436992481203007, F1_Score: 0.9435893753901616
+2025-07-21 09:26:08,991 - INFO - KNeighbors model trained Successfully	Metrics: Accuracy:0.8673684210526316, Precision :0.8678166750357017, Recall: 0.8673684210526316, F1_Score: 0.8665639015419659
+2025-07-21 09:26:09,083 - INFO - Naive Bayes model trained Successfully	Metrics: Accuracy:0.8526917293233083, Precision :0.8533249903099354, Recall: 0.8526917293233083, F1_Score: 0.8529041732415017
+2025-07-21 09:26:09,158 - INFO - Model Selection Pipeline completed Successfully
+2025-07-21 09:29:33,864 - INFO - Model Selection Pipeline Started
+2025-07-21 09:29:33,912 - INFO - loaded 10.0% data and sampled successfully
+2025-07-21 09:29:33,912 - INFO - Splitting Data
+2025-07-21 09:29:33,918 - INFO - Model training  and evaluation started
+2025-07-21 09:29:35,277 - INFO - Logistic Regression model trained Successfully	Metrics: Accuracy:0.8257443609022557, Precision :0.8291057567347898, Recall: 0.8257443609022557, F1_Score: 0.8263946760827705
+2025-07-21 09:31:36,994 - INFO - SVC model trained Successfully	Metrics: Accuracy:0.6631578947368421, Precision :0.6623539213283469, Recall: 0.6631578947368421, F1_Score: 0.6493370771008794
+2025-07-21 09:31:37,234 - INFO - Decistion Tree Classifier model trained Successfully	Metrics: Accuracy:0.922406015037594, Precision :0.922472841508481, Recall: 0.922406015037594, F1_Score: 0.9224334514894308
+2025-07-21 09:31:38,135 - INFO - Random Forest Classifier model trained Successfully	Metrics: Accuracy:0.9441203007518797, Precision :0.9441589674332732, Recall: 0.9441203007518797, F1_Score: 0.944027578558742
+2025-07-21 09:31:39,175 - INFO - AdaBoost Classifier model trained Successfully	Metrics: Accuracy:0.8893834586466165, Precision :0.8892305304692101, Recall: 0.8893834586466165, F1_Score: 0.8892454406362735
+2025-07-21 09:31:41,435 - INFO - Gradient Boosting Classifier model trained Successfully	Metrics: Accuracy:0.9202406015037594, Precision :0.9201698769093614, Recall: 0.9202406015037594, F1_Score: 0.9201824248317525
+2025-07-21 09:31:41,757 - INFO - XGBoost model trained Successfully	Metrics: Accuracy:0.9449022556390978, Precision :0.9449395226140581, Recall: 0.9449022556390978, F1_Score: 0.9448124759041532
+2025-07-21 09:31:42,133 - INFO - LightGBM model trained Successfully	Metrics: Accuracy:0.9436992481203007, Precision :0.9437822997933131, Recall: 0.9436992481203007, F1_Score: 0.9435893753901616
+2025-07-21 09:31:42,573 - INFO - KNeighbors model trained Successfully	Metrics: Accuracy:0.8673684210526316, Precision :0.8678166750357017, Recall: 0.8673684210526316, F1_Score: 0.8665639015419659
+2025-07-21 09:31:42,660 - INFO - Naive Bayes model trained Successfully	Metrics: Accuracy:0.8526917293233083, Precision :0.8533249903099354, Recall: 0.8526917293233083, F1_Score: 0.8529041732415017
+2025-07-21 09:31:42,729 - INFO - Model Selection Pipeline completed Successfully
+2025-07-21 09:34:35,571 - INFO - Model training Started
+2025-07-21 09:34:35,604 - INFO - Loading data
+2025-07-21 09:34:35,647 - INFO - Data Successfully Loaded
+2025-07-21 09:34:35,647 - INFO - Splitting Data
+2025-07-21 09:34:35,657 - INFO - Data splitted Successfully
+2025-07-21 09:34:35,657 - INFO - Loaded Hyperparameters: {'learning_rate': [0.01, 0.05, 0.1], 'n_estimators': [100, 200, 300], 'max_depth': [5, 10, 15]}
+2025-07-21 09:34:35,658 - INFO - Model training Started
+2025-07-21 09:35:17,573 - INFO - Best model : LGBMClassifier(max_depth=10, n_estimators=200)	 Trained Successfully
+2025-07-21 09:35:17,573 - INFO - Best Hyperparameters: {'learning_rate': 0.1, 'max_depth': 10, 'n_estimators': 200}
+2025-07-21 09:35:17,651 - INFO - Evaluation metrics: {'accuracy': 0.9457443609022557, 'precision': 0.9458054245984763, 'recall': 0.9457443609022557, 'f1_score': 0.9456483617215282, 'confusion_matrix': [[9119, 356], [546, 6604]]}
+2025-07-21 09:35:17,664 - INFO - Saving model
+2025-07-21 09:35:17,673 - INFO - Model Successfully Saved!

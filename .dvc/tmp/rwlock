@@ -1,0 +1,1 @@
+{"read": {"/home/user/PROJECT/src/model_training.py": [{"pid": 22387, "cmd": "/home/user/PROJECT/venv/bin/dvc repro"}], "/home/user/PROJECT/config/paths_config.py": [{"pid": 22387, "cmd": "/home/user/PROJECT/venv/bin/dvc repro"}], "/home/user/PROJECT/utils/helpers.py": [{"pid": 22387, "cmd": "/home/user/PROJECT/venv/bin/dvc repro"}]}}

@@ -1,0 +1,6 @@
+artifact_location: file:///home/user/PROJECT/mlruns/854998202466257944
+creation_time: 1753052123109
+experiment_id: '854998202466257944'
+last_update_time: 1753052123109
+lifecycle_stage: active
+name: Model_Training_Environment

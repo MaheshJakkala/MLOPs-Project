@@ -1,0 +1,14 @@
+artifact_uri: file:///home/user/PROJECT/mlruns/854998202466257944/d1505b5341824a0db8228651b9c06e19/artifacts
+end_time: 1753052546419
+entry_point_name: ''
+experiment_id: '854998202466257944'
+lifecycle_stage: active
+run_id: d1505b5341824a0db8228651b9c06e19
+run_name: amusing-crow-68
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753052495815
+status: 3
+tags: []
+user_id: user

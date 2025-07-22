@@ -1,0 +1,14 @@
+artifact_uri: file:///home/user/PROJECT/mlruns/854998202466257944/f735783fd0404d1283b5fd75c18b3541/artifacts
+end_time: 1753052123250
+entry_point_name: ''
+experiment_id: '854998202466257944'
+lifecycle_stage: active
+run_id: f735783fd0404d1283b5fd75c18b3541
+run_name: bold-swan-178
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753052123151
+status: 4
+tags: []
+user_id: user

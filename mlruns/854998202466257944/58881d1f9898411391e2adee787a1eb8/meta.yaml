@@ -1,0 +1,14 @@
+artifact_uri: file:///home/user/PROJECT/mlruns/854998202466257944/58881d1f9898411391e2adee787a1eb8/artifacts
+end_time: 1753088114456
+entry_point_name: ''
+experiment_id: '854998202466257944'
+lifecycle_stage: active
+run_id: 58881d1f9898411391e2adee787a1eb8
+run_name: skillful-jay-997
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753088006767
+status: 3
+tags: []
+user_id: user

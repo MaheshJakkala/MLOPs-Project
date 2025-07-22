@@ -1,0 +1,14 @@
+artifact_uri: file:///home/user/PROJECT/mlruns/854998202466257944/de7f10a45267459ab81a73032e4d0586/artifacts
+end_time: 1753090519697
+entry_point_name: ''
+experiment_id: '854998202466257944'
+lifecycle_stage: active
+run_id: de7f10a45267459ab81a73032e4d0586
+run_name: rare-rat-945
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753090475600
+status: 3
+tags: []
+user_id: user

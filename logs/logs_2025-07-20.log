@@ -1,0 +1,18 @@
+2025-07-20 22:56:34,574 - INFO - Model training Started
+2025-07-20 22:56:34,630 - INFO - Loading data
+2025-07-20 22:56:34,695 - INFO - Data Successfully Loaded
+2025-07-20 22:56:34,695 - INFO - Splitting Data
+2025-07-20 22:56:34,708 - INFO - Data splitted Successfully
+2025-07-20 22:56:34,709 - INFO - Loaded Hyperparameters: {'learning_rate': [0.01, 0.05, 0.1], 'n_estimators': [100, 200, 300], 'max_depth': [5, 10, 15]}
+2025-07-20 23:01:35,775 - INFO - Model training Started
+2025-07-20 23:01:35,820 - INFO - Loading data
+2025-07-20 23:01:35,877 - INFO - Data Successfully Loaded
+2025-07-20 23:01:35,878 - INFO - Splitting Data
+2025-07-20 23:01:35,888 - INFO - Data splitted Successfully
+2025-07-20 23:01:35,888 - INFO - Loaded Hyperparameters: {'learning_rate': [0.01, 0.05, 0.1], 'n_estimators': [100, 200, 300], 'max_depth': [5, 10, 15]}
+2025-07-20 23:01:35,890 - INFO - Model training Started
+2025-07-20 23:02:23,859 - INFO - Best model : LGBMClassifier(max_depth=10, n_estimators=200)	 Trained Successfully
+2025-07-20 23:02:23,859 - INFO - Best Hyperparameters: {'learning_rate': 0.1, 'max_depth': 10, 'n_estimators': 200}
+2025-07-20 23:02:23,958 - INFO - Evaluation metrics: {'accuracy': 0.9457443609022557, 'precision': 0.9458054245984763, 'recall': 0.9457443609022557, 'f1_score': 0.9456483617215282, 'confusion_matrix': [[9119, 356], [546, 6604]]}
+2025-07-20 23:02:23,973 - INFO - Saving model
+2025-07-20 23:02:23,981 - INFO - Model Successfully Saved!
