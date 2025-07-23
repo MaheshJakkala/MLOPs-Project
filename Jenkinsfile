@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     environment {
         VENV_DIR = "venv"
     }
@@ -9,16 +9,33 @@ pipeline {
         stage('Cloning from Github Repo') {
             steps {
                 script {
-                    //Cloning from Github Repo
                     echo 'Cloning from Github Repo.....'
-                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'mlops-github-token', url: 'https://github.com/MaheshJakkala/MLOPs-Project.git']])
+                    checkout scmGit(branches: [[name: '*/main']],
+                        extensions: [],
+                        userRemoteConfigs: [[
+                            credentialsId: 'mlops-github-token',
+                            url: 'https://github.com/MaheshJakkala/MLOPs-Project.git'
+                        ]])
                 }
             }
         }
-         stage('Setup Virtual Environment') {
+
+        stage('Install Python') {
             steps {
                 script {
-                    //Setup Virtual Environment
+                    echo 'Installing Python...'
+                    sh '''
+                        sudo apt-get update
+                        sudo apt-get install -y python3 python3-venv python3-pip
+                        ln -s /usr/bin/python3 /usr/bin/python || true
+                    '''
+                }
+            }
+        }
+
+        stage('Setup Virtual Environment') {
+            steps {
+                script {
                     echo 'Setup Virtual Environment......'
                     sh """
                         python -m venv ${VENV_DIR}
@@ -29,13 +46,12 @@ pipeline {
                 }
             }
         }
-         stage('Linting Code') {
+
+        stage('Linting Code') {
             steps {
                 script {
-                    //Linting Code
                     echo 'Linting Code.....'
                     sh """
-                        set -e .
                         . ${VENV_DIR}/bin/activate
 
                         pylint application.py main.py --output=pylint-report.txt --exit-zero || echo 'pylint stage completed'
