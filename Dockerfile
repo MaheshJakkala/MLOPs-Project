@@ -17,6 +17,8 @@ RUN apt-get update -y && \
 RUN groupadd -f docker && \
     usermod -aG docker jenkins
 
+    
+
 # Create the Docker directory and volume for DinD
 RUN mkdir -p /var/lib/docker
 VOLUME /var/lib/docker
