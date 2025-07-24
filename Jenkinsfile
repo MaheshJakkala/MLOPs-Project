@@ -13,6 +13,13 @@ pipeline {
                     checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'mlops-github-token', url: 'https://github.com/MaheshJakkala/MLOPs-Project.git']])
                 }
             }
+        }stage('Cloning from Github Repo') {
+            steps {
+                script {
+                    echo 'Cloning from Github Repo.....'
+                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'mlops-github-token', url: 'https://github.com/MaheshJakkala/MLOPs-Project.git']])
+                }
+            }
         }
         stage('Setup Virtual Environment') {
             steps {
@@ -38,6 +45,14 @@ pipeline {
                         black application.py main.py || echo 'Black stage Completed'
                     """
                 }
+            }
+        }
+        stage('Trivy Scanning') {
+            steps {
+                script {
+                    echo 'Trivy Scanning.......'
+                    sh "trivy fs ./ --format table -o trivy-fd-report.html"                
+                    }
             }
         }
     }
