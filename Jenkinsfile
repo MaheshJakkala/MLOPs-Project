@@ -45,7 +45,7 @@ pipeline {
             steps {
                 script {
                     echo 'Trivy Scanning.......'
-                    sh "trivy fs ./ --format table -o trivy-fd-report.html"                
+                    sh "docker exec jenkins-dind trivy fs ./ --format table -o trivy-fd-report.html"                
                 }
             }
         }
