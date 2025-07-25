@@ -2,12 +2,8 @@ FROM jenkins/jenkins:lts
 
 USER root
 
-# Install required packages and bypass Debian's PEP 668 restriction
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip curl docker.io && \
+    apt-get install -y python3 python3-pip curl docker.io git && \
     pip3 install --upgrade pip --break-system-packages
-
-# Add jenkins user to docker group (so Jenkins can use docker commands)
-RUN usermod -aG docker jenkins
 
 USER jenkins
