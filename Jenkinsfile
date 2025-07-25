@@ -88,7 +88,7 @@ pipeline {
             steps {
                 script {
                     echo 'Docker Image Scanning.......'
-                    sd "trivy image mlops:latest --format table -o trivy-image-scan-report.html"             
+                    sh "trivy image mlops:latest --format table -o trivy-image-scan-report.html"             
                 }
             }
         }
