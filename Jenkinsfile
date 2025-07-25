@@ -77,11 +77,11 @@ pipeline {
             }
         }
 
-        stage('Debug Info') {
-            steps {
-                sh 'pwd && ls -la'
-                sh 'git rev-parse --show-toplevel || echo "Not a Git repo"'
-            }
-        }
+        // stage('Debug Info') {
+        //     steps {
+        //         sh 'pwd && ls -la'
+        //         sh 'git rev-parse --show-toplevel || echo "Not a Git repo"'
+        //     }
+        // }
     }
 }
