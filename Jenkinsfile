@@ -8,10 +8,17 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                git branch: 'main',
+                    url: 'https://github.com/MaheshJakkala/MLOPs-Project.git'
             }
         }
-        
+
+        stage('Run Git Commands') {
+            steps {
+                sh 'git config remote.origin.url'  // This will now work
+            }
+        }
+
         stage('Cloning from Github Repo') {
             steps {
                 script {
