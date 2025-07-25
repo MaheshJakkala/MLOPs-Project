@@ -14,20 +14,20 @@ pipeline {
         //         }
         //     }
         // }
-        stage('Cloning from GitHub') {
-            steps {
-                script {
-                    checkout scmGit(
-                        branches: [[name: '*/main']],
-                        extensions: [],
-                        userRemoteConfigs: [[
-                            credentialsId: 'mlops-github-token',
-                            url: 'https://github.com/MaheshJakkala/MLOPs-Project.git'
-                        ]]
-                    )
-                }
-            }
-        }
+        // stage('Cloning from GitHub') {
+        //     steps {
+        //         script {
+        //             checkout scmGit(
+        //                 branches: [[name: '*/main']],
+        //                 extensions: [],
+        //                 userRemoteConfigs: [[
+        //                     credentialsId: 'mlops-github-token',
+        //                     url: 'https://github.com/MaheshJakkala/MLOPs-Project.git'
+        //                 ]]
+        //             )
+        //         }
+        //     }
+        // }
         stage('Setup Virtual Environment') {
             steps {
                 script {
@@ -63,5 +63,12 @@ pipeline {
                 }
             }
         }
+        stage('Debug Info') {
+            steps {
+                sh 'pwd && ls -la'
+                sh 'git rev-parse --show-toplevel || echo "Not a Git repo"'
+            }
+        }
+
     }
 }
