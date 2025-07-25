@@ -11,14 +11,14 @@ pipeline {
     }
 
     stages {
-        stage('Cloning Github Repo') {
-            steps {
-                script {
-                    echo 'Cloning Github Repo......'
-                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'mlops-github-token', url: 'https://github.com/MaheshJakkala/MLOPs-Project.git']])
-                }
-            }
-        }
+        // stage('Cloning Github Repo') {
+        //     steps {
+        //         script {
+        //             echo 'Cloning Github Repo......'
+        //             checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'mlops-github-token', url: 'https://github.com/MaheshJakkala/MLOPs-Project.git']])
+        //         }
+        //     }
+        // }
 
         stage('Setup Virtual Environment') {
             steps {
