@@ -1,11 +1,22 @@
+// 
+
+
+
+
 pipeline {
     agent any
-    
+
     environment {
         VENV_DIR = "venv"
     }
 
     stages {
+        stage('Clone Repository') {
+            steps {
+                checkout scm
+            }
+        }
+
         stage('Check Git Status') {
             steps {
                 sh 'ls -la'
@@ -13,28 +24,6 @@ pipeline {
             }
         }
 
-        // stage('Cloning from Github Repo') {
-        //     steps {
-        //         script {
-        //             echo 'Cloning from Github Repo.....'
-        //             checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'mlops-github-token', url: 'https://github.com/MaheshJakkala/MLOPs-Project.git']])
-        //         }
-        //     }
-        // }
-        // stage('Cloning from GitHub') {
-        //     steps {
-        //         script {
-        //             checkout scmGit(
-        //                 branches: [[name: '*/main']],
-        //                 extensions: [],
-        //                 userRemoteConfigs: [[
-        //                     credentialsId: 'mlops-github-token',
-        //                     url: 'https://github.com/MaheshJakkala/MLOPs-Project.git'
-        //                 ]]
-        //             )
-        //         }
-        //     }
-        // }
         stage('Setup Virtual Environment') {
             steps {
                 script {
@@ -48,6 +37,7 @@ pipeline {
                 }
             }
         }
+
         stage('Linting Code') {
             steps {
                 script {
@@ -70,12 +60,12 @@ pipeline {
                 }
             }
         }
+
         stage('Debug Info') {
             steps {
                 sh 'pwd && ls -la'
                 sh 'git rev-parse --show-toplevel || echo "Not a Git repo"'
             }
         }
-
     }
 }
