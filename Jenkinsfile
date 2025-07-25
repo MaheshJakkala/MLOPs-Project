@@ -24,12 +24,6 @@ pipeline {
                 sh 'git config --global --add safe.directory /var/jenkins_home/workspace/MLOPs'
             }
         }
-        stage('Install venv if missing') {
-            steps {
-                sh 'sudo apt-get update && sudo apt-get install -y python3-venv'
-            }
-        }
-
         stage('Setup Virtual Environment') {
             steps {
                 script {
