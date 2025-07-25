@@ -19,7 +19,11 @@ pipeline {
         //         }
         //     }
         // }
-
+        stage('Fix Git Safe Directory') {
+            steps {
+                sh 'git config --global --add safe.directory /var/jenkins_home/workspace/MLOPs'
+            }
+        }
         stage('Setup Virtual Environment') {
             steps {
                 script {
