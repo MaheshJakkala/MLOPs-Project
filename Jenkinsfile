@@ -72,7 +72,7 @@ pipeline {
             steps {
                 script {
                     echo 'Trivy Scanning.......'
-                    sh "docker exec jenkins-dind trivy fs ./ --format table -o trivy-fd-report.html"                
+                    sh "trivy fs ./ --format table -o trivy-fd-report.html"                
                 }
             }
         }
