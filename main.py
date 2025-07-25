@@ -24,9 +24,9 @@ if __name__ =="__main__":
         engineer = FeatureEngineer()
         engineer.run()
 
-        #model selection
-        model_selection = ModelSelector(ENGINEERED_DATA_PATH)
-        model_selection.run()
+        # #model selection
+        # model_selection = ModelSelector(ENGINEERED_DATA_PATH)
+        # model_selection.run()
 
         #model training
         trainer = ModelTrainer(ENGINEERED_DATA_PATH,params_path=PARAMS_PATH,model_save_path=MODEL_SAVE_PATH)
