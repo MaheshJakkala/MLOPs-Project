@@ -6,6 +6,13 @@ pipeline {
     }
 
     stages {
+        stage('Check Git Status') {
+            steps {
+                sh 'ls -la'
+                sh 'git status || echo "No git repository found"'
+            }
+        }
+
         // stage('Cloning from Github Repo') {
         //     steps {
         //         script {
