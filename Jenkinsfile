@@ -11,16 +11,12 @@ pipeline {
     }
 
     stages {
-        stage('Clone Repository') {
+        stage('Cloning Github Repo') {
             steps {
-                checkout scm
-            }
-        }
-
-        stage('Check Git Status') {
-            steps {
-                sh 'ls -la'
-                sh 'git status || echo "No git repository found"'
+                script {
+                    echo 'Cloning Github Repo......'
+                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'mlops-github-token', url: 'https://github.com/MaheshJakkala/MLOPs-Project.git']])
+                }
             }
         }
 
