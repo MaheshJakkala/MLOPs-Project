@@ -24,6 +24,22 @@ pipeline {
                 sh 'git config --global --add safe.directory /var/jenkins_home/workspace/MLOPs'
             }
         }
+        stage('Check Python Version and ensurepip') {
+            steps {
+                sh '''
+                    echo "=== Python Version ==="
+                    python3 --version || echo "python3 not found"
+
+                    echo "=== Python Location ==="
+                    which python3 || echo "python3 not found"
+
+                    echo "=== ensurepip Check ==="
+                    python3 -m ensurepip --version || echo "ensurepip not available"
+                '''
+            }
+        }
+
+
         stage('Setup Virtual Environment') {
             steps {
                 script {
