@@ -2,7 +2,7 @@ from src.custom_exception import CustomException
 from src.data_ingestion import DataIngestion
 from src.data_processing import DataProcessor
 from src.feature_engineering import FeatureEngineer
-from src.model_selection import ModelSelector
+# from src.model_selection import ModelSelector
 from src.model_training import ModelTrainer
 
 from utils.helpers import *
