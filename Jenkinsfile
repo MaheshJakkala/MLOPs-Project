@@ -6,16 +6,15 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
+        stage('Clone Repo') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/MaheshJakkala/MLOPs-Project.git'
+                git url: 'https://github.com/MaheshJakkala/MLOPs-Project.git', branch: 'main'
             }
         }
 
-        stage('Run Git Commands') {
+        stage('Run Something') {
             steps {
-                sh 'git config remote.origin.url'  // This will now work
+                sh 'git config remote.origin.url'
             }
         }
 
