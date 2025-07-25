@@ -103,9 +103,9 @@ pipeline {
                     docker.withRegistry("${DOCKERHUB_REGISTRY}" , "${DOCKERHUB_CREDENTIAL_ID}"){
                         dockerImage.push('latest')
                     }
+                }
             }
         }
-        
 
         // stage('Debug Info') {
         //     steps {
@@ -113,5 +113,5 @@ pipeline {
         //         sh 'git rev-parse --show-toplevel || echo "Not a Git repo"'
         //     }
         // }
-    }
+    }   
 }
